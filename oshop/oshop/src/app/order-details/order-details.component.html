@@ -1,0 +1,40 @@
+<h1>
+    Order Details
+</h1>
+<div class="row col-12">
+    <table class="table" *ngFor="let order of order$ | async">
+        <thead>
+            <tr>
+                <th>User Id: {{order.userId}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{order.shipping.name}}</h5>
+                    <p class="card-text"> {{order.datePlaced | date}}
+
+                        <tr class="text-center">
+                            <th class="text-left"> Items </th>
+                            <th> Quantity </th>
+                            <th> Price </th>
+                            <th> Total Price </th>
+                        </tr>
+
+                        <tr class="text-center" *ngFor="let item of order.items">
+                            <td class="text-left"> {{item.product.title}} </td>
+                            <td>{{item.quantity}}</td>
+                            <td> {{item.product.price | currency:'INR':symbol}}</td>
+                            <td> {{item.totalPrice | currency:'INR':symbol}} </td>
+                        </tr>
+                    </p>
+                </div>
+            </div>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th></th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
