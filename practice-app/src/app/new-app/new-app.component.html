@@ -1,0 +1,29 @@
+<mat-toolbar color="accent" class="toolbar">
+
+    <button mat-button routerLink="/notes">
+        <mat-icon title="Add New" >create</mat-icon>
+    </button > <span>Notes App </span>
+
+    <button mat-stroked-button routerLink="/">Close</button>
+
+</mat-toolbar>
+<!-- <span (click)='toggleHidden()'> -->
+
+<button mat-stroked-button color="secondary" [textContent]="collapseClicked ? 'Expand All' : 'Collapse All'" (click)="collapseClicked=!collapseClicked ;toggleHidden() ; chngIcon = !chngIcon ">{{textContent}}  </button>
+<mat-card class="todo-cards" *ngFor="let todo of todosList;let i = index">
+    <mat-card-header class="header" title="{{todo.title}}">
+        <mat-icon class="expand" [textContent]="chngIcon ? 'expand_more' : 'expand_less'">
+            arrow_drop_down_circle
+        </mat-icon>
+        <mat-card-title>{{todo.title | uppercase }}</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content [class.hidden]="isHidden">
+        <!-- <p [hidden]="!isHidden"> -->
+        <p> {{todo.details}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button title="Edit" (click)="onEdit(todo)">EDIT</button>
+        <button mat-button title="Delete" (click)="onDelete(todo)">DELETE</button>
+    </mat-card-actions>
+</mat-card>

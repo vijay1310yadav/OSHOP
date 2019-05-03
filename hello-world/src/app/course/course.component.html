@@ -20,7 +20,9 @@
         </form>
         <button (click)="onAdd()">Add 4th course</button>
         <li class="list" *ngFor="let course of courses; index as i; even as isEven ">
-            {{i+1}} - {{course.name}}<span *ngIf="isEven">(This is odd)</span>
+            {{course.id}} - {{course.name}}<span *ngIf="isEven">(This is odd)</span>
+            <!-- this piece is use to display index before content rather than ID from the array.-->
+            <!-- {{i+1}} - {{course.name}}<span *ngIf="isEven">(This is odd)</span> -->
             <button style="background:red" (click)="onDel(course)">Delete</button>
         </li>
     </ul>

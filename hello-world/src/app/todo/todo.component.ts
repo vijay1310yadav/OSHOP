@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 
 @Component({
@@ -6,24 +6,31 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css']
 })
-export class TodoComponent implements OnInit {
+export class TodoComponent {
 
   constructor() { }
 
-  New_todo="";
-  todos = [
-  ];
-  addNewTodo(){
-    this.todos.push({task:this.New_todo});
-    
+  appTitle: string = "ToDo App";
+
+  New_todo = "";
+
+  todos = [];
+
+  id: number = this.todos.length + 1;
+  hidden: boolean;
+
+  addNewTodo() {
+    this.todos.push({ id: this.id++, task: this.New_todo });
+    this.hidden = true;
+
   }
 
-  removeTodo(task){
+  onDelete(task) {
 
-    let taskIndex=this.todos.indexOf(task);
-    this.todos.splice(taskIndex,1);
+    let taskIndex = this.todos.indexOf(task);
+    this.todos.splice(taskIndex, 1);
   }
-  ngOnInit() {
-  }
+
+
 
 }

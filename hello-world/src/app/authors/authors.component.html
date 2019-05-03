@@ -1,6 +1,51 @@
-<h2>{{title}}</h2>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<h2>{{authors.length}} Authors</h2>
+
+<img class="divider" src="https://ui-ex.com/images/transparent-divider-web-page-5.png">
+
+
+<bootstrap-panel>
+    <div class="heading">Some Heading!!</div>
+    <div class="body">
+        <h2>Some Body content</h2>
+    </div>
+</bootstrap-panel>
+
+<img class="divider" src="https://ui-ex.com/images/transparent-divider-web-page-5.png">
+
+
 <ul>
-    <li *ngFor="let author of authors">
-        {{author}}
+
+    <like [isClicked]="postLiked.isLiked" [likesCount]="postLiked.likesCount"></like>
+
+    <favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChanged($event)"></favorite>
+
+    <li *ngFor="let author of authors">{{author}}
     </li>
 </ul>
+<span><input type="text" [(ngModel)]="newTitle"/><br> {{newTitle | titlecase }}</span>
+
+<img class="divider" src="https://ui-ex.com/images/transparent-divider-web-page-5.png">
+
+
+<zippy title="shipping details">
+    Shipping details Content!
+</zippy>
+
+<img class="divider" src="https://ui-ex.com/images/transparent-divider-web-page-5.png">
+
+
+<contact-form></contact-form>
+
+<img class="divider" src="https://ui-ex.com/images/transparent-divider-web-page-5.png">
+
+
+<signup-form></signup-form>
+
+
+<img class="divider" src="https://ui-ex.com/images/transparent-divider-web-page-5.png">
+
+<app-posts></app-posts>

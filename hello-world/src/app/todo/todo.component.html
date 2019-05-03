@@ -1,20 +1,28 @@
-<div>
-    <h2 class="header">This is my todo app.</h2>
-    <ul>
-        <form><span class="form">
+<body>
+    <div>
+        <h2 class="header">{{appTitle}}</h2>
+        <ul class="body">
+            <form>
+
+
+                <span class="form">
             <input [(ngModel)]="New_todo" name="New_todo" placeholder="Enter New ToDo!" />
-            <button (click)="addNewTodo()">Add</button></span>
-        </form>
+            <button class="add" (click)="addNewTodo()">Add</button></span>
+            </form>
 
-        <table class="table table-bordered">
-            <th>To Do List:</th>
-            <tr class="list" *ngIf="New_todo==''">Please enter something <button>Cancel <small>currently not working.</small></button></tr>
+            <table class="table">
+                <th>To Do List: <br><span><like [likesCount]="51"></like></span>
+                </th>
+                <tr [hidden]="isHidden" class="list" *ngIf="New_todo ==''">Please enter something
+                    <button class="delete" (click)="isHidden=!isHidden">Cancel </button></tr>
 
-            <tr class="list" *ngFor="let todo of todos">
-                <span> {{todo.task}}</span><button class="delete" (click)="removeTodo()">Delete</button>
-            </tr>
+                <tr id='list' class="list" *ngFor="let todo of todos; let i = index">
 
-        </table>
+                    <span> <a>{{i+1}} .</a>{{todo.task}}</span><button class="delete" (click)="onDelete(todo)">Delete</button>
+                </tr>
+            </table>
 
-    </ul>
-</div>
+        </ul>
+    </div>
+
+</body>

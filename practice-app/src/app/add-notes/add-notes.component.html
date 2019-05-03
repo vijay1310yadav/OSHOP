@@ -1,0 +1,19 @@
+<form class="form">
+    <mat-form-field color='secondary' class="full-width">
+
+        <input #titleEntered matInput placeholder="Title" value="">
+
+    </mat-form-field>
+
+
+
+
+    <mat-form-field class="full-width">
+        <textarea #detailsEntered matInput placeholder="Enter Details"></textarea>
+    </mat-form-field>
+</form>
+
+
+<button mat-stroked-button color="primary" (click)="onSaveBtn(titleEntered.value,detailsEntered.value)">
+    Save
+</button>

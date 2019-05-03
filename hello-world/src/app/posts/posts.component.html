@@ -1,0 +1,10 @@
+<input (keyup.enter)="createPost(newPostTitle)" #newPostTitle type="text" class="form-control" />
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let post of posts">{{post.title}}<br>
+        <button class="btn btn-default" (click)="updatePost(post)">Update</button>
+        <button class="btn btn-default" (click)="deletePost(post)">Delete</button>
+        <div *ngIf="deletePost.pending" class="glyphicon glyphicon-delete">Deleting...</div>
+        <div *ngIf="newPostTitle.pending"><span class="glyphicon glyphicon-"> Deleting... </span></div>
+
+    </li>
+</ul>

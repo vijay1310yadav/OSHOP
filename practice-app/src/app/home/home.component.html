@@ -1,0 +1,37 @@
+<!-- <h1 [class.grey]="h1Style">
+    Home works!
+</h1>
+<button (click)="btnClick()">Click to turn it grey</button>
+
+
+<h1 [ngClass]="{
+  'grey': h1Style1,
+  'black': !h1Style1
+} ">
+    Home works!
+</h1>
+<button (click)="btnClick1()">Button</button>
+
+
+
+<h1 [ngStyle]='{
+  "grey" : h1Style2,
+  "black" : !h1Style2
+}'>
+    Home works!
+</h1>
+<button (click)="btnClick2()">Button</button> -->
+
+
+<div>
+
+    <ul *ngIf="users">
+        <li *ngFor="let user of users.data">
+            <img [src]="user.avatar">
+            <p>{{user.first_name}} {{user.last_name}}</p>
+        </li>
+
+
+    </ul>
+
+</div>

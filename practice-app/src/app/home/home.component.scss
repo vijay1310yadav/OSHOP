@@ -1,0 +1,35 @@
+.grey {
+    color: grey;
+    border: solid;
+}
+
+.black {
+    color: rgb(224, 15, 15);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    li {
+        background: rgb(248, 246, 242);
+        margin-bottom: 3px;
+        padding: 1em;
+        border-radius: 4px;
+        display: grid;
+        grid-template-columns: 70px auto;
+        &:hover {
+            background: rgb(207, 206, 203);
+        }
+        p {
+            font-weight: bold;
+            margin-left: 15px;
+        }
+        img {
+            border-radius: 50px;
+            width: 100%;
+            cursor: pointer;
+        }
+    }
+}

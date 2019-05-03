@@ -1,10 +1,32 @@
+body,
+html,
+.body {
+    height: 100%;
+    background: #e4eef1;
+    min-width: 350px;
+    z-index: -1;
+}
+
+@media screen and (max-width: 550px) {
+    table,
+    li,
+    ul,
+    button,
+    input,
+    form {
+        display: block-flex;
+        padding: 0%;
+    }
+}
+
 table {
     width: 70%;
     padding: 15px;
 }
 
 div {
-    background: rgb(212, 206, 206)));
+    min-width: 350px;
+    margin: 0%;
 }
 
 .hide {
@@ -12,16 +34,26 @@ div {
 }
 
 .header {
-    background: rgb(23, 89, 233);
-    color: rgb(190, 184, 184);
-    text-align: center;
+    background: linear-gradient(to top left, #2cb4eb, #106ad1);
+    color: rgb(255, 249, 249);
+    text-align: start;
     padding: 1em;
-    margin: .3em;
-    font-family: cursive;
+    padding-left: 5em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    height: 30%;
 }
 
 ul {
-    padding: 0%;
+    padding-left: 8%;
+    background: #e4eaf0;
+    align-content: center
+}
+
+@media screen and (max-width: 550px) {
+    ul {
+        padding: 0%;
+    }
 }
 
 tr {
@@ -40,18 +72,20 @@ td {
 input {
     width: 75%;
     box-sizing: border-box;
-    padding: .5em;
+    padding: 1em;
     margin: 0.2em;
+    border-radius: 10px;
     text-align: center;
+    font-size: 1em;
 }
 
 input:hover {
-    box-shadow: 2px 1px 1px;
+    box-shadow: 2px 1px 10px;
 }
 
 button {
     background: rgb(67, 68, 75);
-    background-image: linear-gradient(to top left, #ff8a00, #da1b60);
+    background-image: linear-gradient(to top left, #00b7ff, #1b58da);
     color: white;
     border-radius: 5px;
     padding: .7em;
@@ -59,6 +93,15 @@ button {
     min-width: max-content;
     border: 0ch;
     cursor: pointer;
+}
+
+button.add {
+    background-image: linear-gradient(to top left, #2bf36e, #1e9144);
+}
+
+button.add:hover {
+    color: #188a3e;
+    background: #e4eaf0;
 }
 
 form {
@@ -84,8 +127,10 @@ button:hover {
     cursor: pointer;
 }
 
-.delete,
-.list {}
+.delete:hover {
+    color: rgb(212, 49, 20);
+    background: #e4eaf0;
+}
 
 .list {
     justify-content: space-between;

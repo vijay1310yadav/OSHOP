@@ -1,0 +1,35 @@
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo-cards {
+    margin: 5px 5px 5px 0;
+    display: grid;
+    &:hover {
+        box-shadow: 1px 1px 4px;
+    }
+}
+
+mat-icon.expand {
+    cursor: pointer;
+    &:hover {
+        background: rgb(200, 214, 214);
+        border-radius: 20px
+    }
+}
+
+mat-card {
+    mat-card-header {
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        mat-icon {
+            cursor: pointer;
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}

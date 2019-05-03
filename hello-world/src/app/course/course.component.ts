@@ -17,10 +17,15 @@ export class CourseComponent implements OnInit {
     {id:3,name:'course3'}
 
   ]
+
+  id:number = this.courses.length +1;
+
+
   courseName = '';
 
   onAdd(){
-    this.courses.push({id:4,name:this.courseName});
+
+    this.courses.push({id:this.id ++,name:this.courseName});
   }
 
   onDel(course){
